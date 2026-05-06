@@ -1,6 +1,6 @@
 spring:
   application:
-    name: product-service
+    name: gateway-service
   cloud:
     nacos:
       discovery:
@@ -15,3 +15,11 @@ spring:
     import: optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:
   port: 8082
+
+
+gateway:
+  whitelist:
+    paths:
+      - /user/login
+      - /user/register
+      - /public/**  #路径白名单 先随便写几个
