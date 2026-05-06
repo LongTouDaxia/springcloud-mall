@@ -5,9 +5,10 @@ import com.longtou.productservice.domain.dto.SeckillProductDTO;
 import com.longtou.productservice.domain.dto.SeckillStockDTO;
 import com.longtou.productservice.domain.entity.SeckillProduct;
 import com.longtou.productservice.domain.vo.SeckillProductVO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface SeckillProductService extends IService<SeckillProduct> {
     SeckillProductVO addSeckillProduct(SeckillProductDTO dto);
     SeckillProductVO updateSeckillProduct(SeckillProductDTO dto);

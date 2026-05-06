@@ -14,9 +14,15 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> implements ProductService {
+
+    private final ProductMapper productMapper;
 
     @Override
     @Transactional
@@ -67,6 +73,21 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         if (!this.removeById(id)) {
             throw new BusinessException(ErrorCode.PRODUCT_DELETE_FAIL);
         }
+    }
+
+    @Override
+    public List<ProductVO> getProductByIds(List<Long> ids) {
+        //ids不为空了 直接查
+        List<Product> products = productMapper.selectBatchIds(ids);
+
+        if (products == null || products.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        //stream流加api调用
+        return products.stream()
+                .map(this::convertToVO)
+                .collect(Collectors.toList());
     }
 
     private ProductVO convertToVO(Product product) {
