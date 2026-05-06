@@ -55,7 +55,9 @@ public enum ErrorCode {
     PRODUCT_PRICE_ERROR(3007, "商品价格异常"),
     PRODUCT_IMAGE_UPLOAD_FAIL(3008, "商品图片上传失败"),
     PRODUCT_BATCH_UPDATE_ERROR(3009, "商品批量更新失败"),
-
+    PRODUCT_DELETE_FAIL(3010,"商品删除失败"),
+    SECKILL_PRODUCT_DELETE_FAIL(3011,"秒杀商品删除失败"),
+    SECKILL_PRODUCT_NOT_EXIST(3012,"秒杀商品不存在"),
     // ========== 购物车模块 (4000-4999) ==========
     CART_ITEM_NOT_EXIST(4001, "购物车项不存在"),
     CART_PRODUCT_NOT_FOUND(4002, "购物车中未找到该商品"),
