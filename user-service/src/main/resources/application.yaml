@@ -1,0 +1,20 @@
+
+spring:
+  application:
+    name: user-service                   # ??? Nacos ?? Data ID ????
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: dev
+      config:
+        server-addr: localhost:8848    # Nacos ?????
+        file-extension: yaml             # ?????? Data ID ????[reference:6]
+        refresh-enabled: true            # ???????????? true
+        namespace: dev #????
+
+#??? ????????????
+  config:
+    import: optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+server:
+  port: 8081
