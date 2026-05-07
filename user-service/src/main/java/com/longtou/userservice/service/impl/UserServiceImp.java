@@ -2,9 +2,10 @@ package com.longtou.userservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.longtou.common.exception.BusinessException;
-import com.longtou.common.exception.ErrorCode;
-import com.longtou.common.utils.JwtUtils;
+import com.longtou.commoncore.utils.JwtUtils;
+import com.longtou.commonweb.exception.BusinessException;
+import com.longtou.commoncore.constant.ErrorCode;
+
 import com.longtou.userservice.domain.dto.LoginDTO;
 import com.longtou.userservice.domain.dto.RegisterDTO;
 import com.longtou.userservice.domain.entity.User;

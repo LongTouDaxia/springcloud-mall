@@ -1,12 +1,11 @@
 package com.longtou.productservice.controller;
 
-import com.longtou.common.result.Result;
+import com.longtou.commoncore.result.Result;
 import com.longtou.productservice.domain.dto.SeckillProductDTO;
 import com.longtou.productservice.domain.dto.SeckillStockDTO;
 import com.longtou.productservice.domain.vo.SeckillProductVO;
 import com.longtou.productservice.service.SeckillProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

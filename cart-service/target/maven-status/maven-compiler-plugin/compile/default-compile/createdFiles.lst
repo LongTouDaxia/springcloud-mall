@@ -1,1 +1,14 @@
+com\longtou\cartservice\domain\vo\CartItemVO.class
+com\longtou\cartservice\domain\entity\CartItem.class
+com\longtou\cartservice\domain\entity\Cart.class
+com\longtou\cartservice\mapper\CartItemMapper.class
+com\longtou\cartservice\domain\vo\CartVO.class
+com\longtou\cartservice\service\CartItemService.class
+com\longtou\cartservice\domain\dto\UpdateCartItemDTO.class
+com\longtou\cartservice\service\impl\CartServiceImpl.class
+com\longtou\cartservice\service\impl\CartItemServiceImpl.class
+com\longtou\cartservice\mapper\CartMapper.class
+com\longtou\cartservice\controller\CartController.class
 com\longtou\cartservice\CartServiceApplication.class
+com\longtou\cartservice\domain\dto\AddToCartDTO.class
+com\longtou\cartservice\service\CartService.class

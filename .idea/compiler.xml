@@ -7,23 +7,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common-api" />
         <module name="cart-service" />
         <module name="pay-service" />
-        <module name="common" />
         <module name="product-service" />
+        <module name="common-web" />
         <module name="order-service" />
         <module name="user-service" />
-        <module name="mall-api" />
         <module name="gateway" />
+        <module name="common-core" />
+        <module name="common-db" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cart-service" options="" />
       <module name="common" options="" />
+      <module name="common-api" options="" />
+      <module name="common-core" options="" />
+      <module name="common-db" options="" />
+      <module name="common-web" options="" />
       <module name="gateway" options="" />
-      <module name="mall-api" options="" />
       <module name="order-service" options="" />
       <module name="pay-service" options="" />
       <module name="product-service" options="" />

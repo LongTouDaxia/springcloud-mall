@@ -1,1 +1,9 @@
+com\longtou\userservice\domain\vo\UserVO.class
+com\longtou\userservice\service\UserService.class
 com\longtou\userservice\UserServiceApplication.class
+com\longtou\userservice\service\impl\UserServiceImp.class
+com\longtou\userservice\domain\dto\LoginDTO.class
+com\longtou\userservice\domain\entity\User.class
+com\longtou\userservice\controller\UserController.class
+com\longtou\userservice\mapper\UserMapper.class
+com\longtou\userservice\domain\dto\RegisterDTO.class

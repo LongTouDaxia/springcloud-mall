@@ -1,7 +1,7 @@
 // CartItemVO.java
 package com.longtou.cartservice.domain.vo;
 
-import com.longtou.mallapi.domain.vo.ProductVO;
+import com.longtou.commonapi.domain.vo.ProductVO;
 import lombok.Data;
 
 import java.math.BigDecimal;

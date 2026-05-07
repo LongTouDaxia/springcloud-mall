@@ -1,9 +1,10 @@
 package com.longtou.gateway.filter;
 
-import com.longtou.common.utils.JwtUtils;
+import com.longtou.commoncore.utils.JwtUtils;
+
 import com.longtou.gateway.config.WhitelistProperties;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -22,6 +23,7 @@ import java.util.List;
 
    网关统一进行校验jwt
  */
+@Slf4j
 @RequiredArgsConstructor
 @Component
 public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
@@ -42,6 +44,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
         if (isWhitelisted(path)) {
             return chain.filter(exchange);
         }
+        log.info("路径为{}");
         // 2. 非白名单路径才校验 token
         String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
         if (!StringUtils.hasText(authHeader) || !authHeader.startsWith("Bearer ")) {

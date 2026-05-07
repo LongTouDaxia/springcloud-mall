@@ -2,10 +2,9 @@ package com.longtou.productservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.longtou.common.exception.BusinessException;
-import com.longtou.common.exception.ErrorCode;
+import com.longtou.commonweb.exception.BusinessException;
+import com.longtou.commoncore.constant.ErrorCode;
 import com.longtou.productservice.domain.dto.SeckillProductDTO;
-import com.longtou.productservice.domain.dto.SeckillStockDTO;
 import com.longtou.productservice.domain.entity.Product;
 import com.longtou.productservice.domain.entity.SeckillProduct;
 import com.longtou.productservice.domain.vo.SeckillProductVO;
@@ -14,7 +13,7 @@ import com.longtou.productservice.mapper.SeckillProductMapper;
 import com.longtou.productservice.service.ProductService;
 import com.longtou.productservice.service.SeckillProductService;
 import lombok.RequiredArgsConstructor;
-import lombok.var;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,13 +1,11 @@
 package com.longtou.productservice.controller;
 
-import com.longtou.common.result.Result;
+import com.longtou.commoncore.result.Result;
 import com.longtou.productservice.domain.dto.ProductDTO;
-import com.longtou.productservice.domain.entity.Product;
 import com.longtou.productservice.domain.vo.ProductVO;
 import com.longtou.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.BeanUtils;
-import org.springframework.validation.annotation.Validated;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,6 +18,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/product")
 @RequiredArgsConstructor
+@Slf4j
 public class ProductController {
 
     private final ProductService productService;
@@ -44,8 +43,10 @@ public class ProductController {
         productService.deleteProduct(id);
         return Result.success(null);
     }
-    @GetMapping("/product/batch")
+
+    @GetMapping("/batch")
     public Map<Long, ProductVO> batchGetProducts(@RequestParam("ids") List<Long> ids) {
+        log.info("远程调用pproductfeign");
         if (ids == null || ids.isEmpty()) {
             return Collections.emptyMap();
         }

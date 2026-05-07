@@ -1,1 +1,16 @@
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\controller\ProductController.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\ProductServiceApplication.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\service\ProductService.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\vo\ProductVO.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\vo\SeckillProductVO.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\dto\SeckillStockDTO.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\service\impl\SeckillProductServiceImpl.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\mapper\SeckillProductMapper.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\service\impl\ProductServiceImpl.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\mapper\ProductMapper.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\service\SeckillProductService.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\entity\Product.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\dto\ProductDTO.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\controller\SeckillProductController.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\entity\SeckillProduct.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice\domain\dto\SeckillProductDTO.java

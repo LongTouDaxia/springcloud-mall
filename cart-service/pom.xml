@@ -12,14 +12,20 @@
     <artifactId>cart-service</artifactId>
 
     <dependencies>
+        <!-- 依赖 common 模块（包含统一结果、JWT 工具等） -->
         <dependency>
             <groupId>com.mall</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>common-web</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.mall</groupId>
-            <artifactId>mall-api</artifactId>
+            <artifactId>common-core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mall</groupId>
+            <artifactId>common-api</artifactId>
             <version>1.0.0</version>
         </dependency>
 

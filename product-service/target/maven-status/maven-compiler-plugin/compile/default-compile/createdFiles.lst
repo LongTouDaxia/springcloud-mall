@@ -1,1 +1,16 @@
+com\longtou\productservice\domain\dto\SeckillProductDTO.class
+com\longtou\productservice\mapper\SeckillProductMapper.class
+com\longtou\productservice\service\ProductService.class
+com\longtou\productservice\domain\dto\SeckillStockDTO.class
+com\longtou\productservice\service\impl\ProductServiceImpl.class
+com\longtou\productservice\service\impl\SeckillProductServiceImpl.class
+com\longtou\productservice\mapper\ProductMapper.class
 com\longtou\productservice\ProductServiceApplication.class
+com\longtou\productservice\controller\SeckillProductController.class
+com\longtou\productservice\domain\entity\Product.class
+com\longtou\productservice\service\SeckillProductService.class
+com\longtou\productservice\domain\entity\SeckillProduct.class
+com\longtou\productservice\domain\vo\SeckillProductVO.class
+com\longtou\productservice\controller\ProductController.class
+com\longtou\productservice\domain\dto\ProductDTO.class
+com\longtou\productservice\domain\vo\ProductVO.class

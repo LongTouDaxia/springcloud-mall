@@ -1,1 +1,2 @@
 com\longtou\orderservice\OrderServiceApplication.class
+com\longtou\orderservice\domain\entity\Order.class

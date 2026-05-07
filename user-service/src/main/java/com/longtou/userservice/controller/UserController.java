@@ -1,15 +1,14 @@
 package com.longtou.userservice.controller;
 
-import com.longtou.common.exception.BusinessException;
-import com.longtou.common.exception.ErrorCode;
-import com.longtou.common.result.Result;
-import com.longtou.common.utils.UserContext;
+import com.longtou.commonweb.exception.BusinessException;
+import com.longtou.commoncore.constant.ErrorCode;
+import com.longtou.commoncore.result.Result;
+import com.longtou.commoncore.utils.UserContext;
 import com.longtou.userservice.domain.dto.LoginDTO;
 import com.longtou.userservice.domain.dto.RegisterDTO;
 import com.longtou.userservice.domain.vo.UserVO;
 import com.longtou.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

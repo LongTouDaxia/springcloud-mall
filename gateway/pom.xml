@@ -13,10 +13,38 @@
     <artifactId>gateway</artifactId>
 
     <dependencies>
+
         <dependency>
             <groupId>com.mall</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>common-core</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <!-- JJWT 完整依赖 -->
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <!-- Gateway（注意：不要引入 spring-boot-starter-web） -->
         <dependency>
