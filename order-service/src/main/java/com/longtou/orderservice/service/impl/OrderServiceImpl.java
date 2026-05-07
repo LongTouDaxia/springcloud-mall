@@ -1,8 +1,10 @@
 package com.longtou.orderservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.conditions.update.UpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.longtou.commonapi.client.ProductFeignClient;
+import com.longtou.commonweb.exception.BusinessException;
 import com.longtou.orderservice.domain.dto.OrderCreateDTO;
 import com.longtou.orderservice.domain.dto.OrderQueryDTO;
 import com.longtou.orderservice.domain.entity.Order;
@@ -28,6 +30,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements OrderService {
 
+    private final OrderMapper orderMapper;
     private final AtomicLong idGenerator = new AtomicLong(System.currentTimeMillis());
 
     private final ProductFeignClient productFeignClient;
@@ -103,5 +106,37 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
             vo.setProductName(productList.get(order.getProductId()));
             return vo;
         }).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean updateOrderPayStatus(Long orderNo, Integer status) {
+        // 1. 查询订单
+        Order order = query().eq("order_no", orderNo).one();
+        if (order == null) {
+            log.error("订单不存在，订单号：{}", orderNo);
+            return false;  // 返回false，让消费者确认消息
+        }
+
+        // 2. 幂等处理：如果已经是目标状态，直接返回成功
+        if (order.getStatus().equals(status)) {
+            log.info("订单状态已经是目标状态，无需更新，订单号：{}，状态：{}", orderNo, status);
+            return true;  // 返回true，确认消息
+        }
+
+        // 3. 只有未支付状态的订单可以更新
+        if (order.getStatus() != 0) {
+            log.warn("订单当前状态不可更新，订单号：{}，当前状态：{}，目标状态：{}",
+                    orderNo, order.getStatus(), status);
+            return true;  // 返回true，确认消息（不抛异常）
+        }
+
+        // 4. 正常更新
+
+        order.setStatus(status);
+        order.setPayTime(LocalDateTime.now());
+        updateById(order);
+
+        log.info("更新订单状态成功，订单号：{}，新状态：{}", orderNo, order.getStatus());
+        return true;
     }
 }

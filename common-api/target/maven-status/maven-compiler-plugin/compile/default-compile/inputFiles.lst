@@ -1,4 +1,5 @@
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\client\ProductFeignClient.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\client\UserFeignClient.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\domain\dto\ProductDTO.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\client\OrderFeignClient.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\domain\vo\ProductVO.java
