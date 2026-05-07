@@ -4,85 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="142cdcc6-249c-463f-8b7c-9a983b5ac8cc" name="Changes" comment="gateway模块初步开发">
-      <change afterPath="$PROJECT_DIR$/common-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-db/src/main/java/com/longtou/commondb/dbconfig/MqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/route/NacosRouteDefinitionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="142cdcc6-249c-463f-8b7c-9a983b5ac8cc" name="Changes" comment="common模块拆分 网关完善">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/domain/dto/OrderCreateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/domain/dto/OrderQueryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/domain/vo/OrderCreatedVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/domain/vo/OrderVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/CartServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/CartServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/domain/vo/CartItemVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/domain/vo/CartItemVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/com/longtou/cartservice/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/target/classes/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cart-service/target/classes/com/longtou/cartservice/CartServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/target/classes/com/longtou/cartservice/CartServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/config/MqConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/config/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-db/src/main/java/com/longtou/commondb/dbconfig/MyMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-db/src/main/java/com/longtou/commondb/dbconfig/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/constant/MqKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/constant/MqKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/constant/RedisKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/constant/RedisKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/constant/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/longtou/common/utils/UserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/utils/UserContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/longtou/common/CommonApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/resources/META-INF/spring.factories" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/config/WhitelistProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/config/WhitelistProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/classes/com/longtou/gateway/GatewayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/classes/com/longtou/gateway/GatewayApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/src/main/java/com/longtou/mallapi/client/ProductFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/ProductFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/src/main/java/com/longtou/mallapi/client/UserFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/UserFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/src/main/java/com/longtou/mallapi/domain/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/domain/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/src/main/java/com/longtou/mallapi/domain/vo/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/domain/vo/ProductVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/src/test/java/com/longtou/mallapi/MallApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/test/java/com/longtou/commonapi/MallApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mall-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/ProductFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/ProductFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-api/src/test/java/com/longtou/commonapi/MallApiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/test/java/com/longtou/gateway/GatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/OrderServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/target/classes/com/longtou/orderservice/OrderServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/target/classes/com/longtou/orderservice/OrderServiceApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/target/classes/com/longtou/payservice/PayServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/target/classes/com/longtou/payservice/PayServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/controller/SeckillProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/controller/SeckillProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/impl/SeckillProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/impl/SeckillProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/target/classes/com/longtou/productservice/ProductServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/target/classes/com/longtou/productservice/ProductServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/config/interceptor/UserInfoInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/config/interceptor/UserInfoInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/service/impl/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/longtou/userservice/service/impl/UserServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/target/classes/com/longtou/userservice/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/classes/com/longtou/userservice/UserServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -131,6 +78,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common-api [install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.springcloud-mall [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.springcloud-mall [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.springcloud-mall [install].executor&quot;: &quot;Run&quot;,
@@ -145,6 +93,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.CartServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ProductServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
@@ -157,6 +106,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -203,6 +153,7 @@
             <map>
               <entry key="CartServiceApplication" value="STOPPED" />
               <entry key="GatewayApplication" value="STOPPED" />
+              <entry key="OrderServiceApplication" value="FAILED" />
               <entry key="ProductServiceApplication" value="STOPPED" />
               <entry key="UserServiceApplication" value="STOPPED" />
             </map>
@@ -271,7 +222,8 @@
       <option name="presentableId" value="Default" />
       <updated>1778046064769</updated>
       <workItem from="1778046066292" duration="34034000" />
-      <workItem from="1778130891779" duration="2050000" />
+      <workItem from="1778130891779" duration="7043000" />
+      <workItem from="1778141605402" duration="615000" />
     </task>
     <task id="LOCAL-00001" summary="userservice模块开发">
       <option name="closed" value="true" />
@@ -305,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778069858179</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="common模块拆分 网关完善">
+      <option name="closed" value="true" />
+      <created>1778133119305</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778133119306</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +276,7 @@
     <MESSAGE value="productservice模块开发" />
     <MESSAGE value="cartservice模块开发" />
     <MESSAGE value="gateway模块初步开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="gateway模块初步开发" />
+    <MESSAGE value="common模块拆分 网关完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="common模块拆分 网关完善" />
   </component>
 </project>

@@ -4,9 +4,6 @@ package com.longtou.cartservice.domain.vo;
 import com.longtou.commonapi.domain.vo.ProductVO;
 import lombok.Data;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
 @Data
 public class CartItemVO {
     private Long id;

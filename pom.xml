@@ -10,7 +10,6 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>common-api</module>
     <module>gateway</module>
     <module>user-service</module>
     <module>product-service</module>
@@ -18,7 +17,9 @@
     <module>order-service</module>
     <module>pay-service</module>
     <module>common-core</module>
+    <module>common-db</module>
     <module>common-web</module>
+    <module>common-api</module>
   </modules>
 
   <properties>

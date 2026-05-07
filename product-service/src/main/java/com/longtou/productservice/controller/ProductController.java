@@ -55,4 +55,23 @@ public class ProductController {
                 .collect(Collectors.toMap(ProductVO::getId, Function.identity(), (v1, v2) -> v1));
     }
 
+    /**
+     * 批量获取商品名称
+     * @param ids
+     * @return
+     */
+    @GetMapping("/batchGetName")
+    public  Map<Long,String> getProductNameByIds(@RequestParam("ids") List<Long> ids){
+
+        log.info("远程调用pproductfeign");
+        if (ids == null || ids.isEmpty()) {
+            return Collections.emptyMap();
+        }
+        List<ProductVO> productVoList = productService.getProductByIds(ids);
+        return productVoList.stream()
+                .collect(Collectors.toMap(
+                        ProductVO::getId,
+                        ProductVO::getName, (v1, v2) -> v1));//这里表示重复key取第一个
+    }
+
 }

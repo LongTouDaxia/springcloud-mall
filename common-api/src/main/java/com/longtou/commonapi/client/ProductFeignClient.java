@@ -19,4 +19,7 @@ public interface ProductFeignClient {
      */
     @GetMapping("/product/batch")
     Map<Long, ProductVO> batchGetProducts(@RequestParam("ids") List<Long> ids);
+
+    @GetMapping("/product/batchGetName")
+    Map<Long,String> getProductNameByIds(@RequestParam("ids") List<Long> ids);
 }
