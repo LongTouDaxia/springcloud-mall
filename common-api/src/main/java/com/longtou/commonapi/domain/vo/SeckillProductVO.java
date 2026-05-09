@@ -1,18 +1,17 @@
-// SeckillProduct.java
-package com.longtou.productservice.domain.entity;
+package com.longtou.commonapi.domain.vo;
 
-import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("seckill_product")
-public class SeckillProduct {
-    @TableId(type = IdType.AUTO)
+public class SeckillProductVO {
     private Long id;
-
     private Long productId;
+    private String productName;       // 关联的普通商品名称
+    private String productDesc;       // 商品描述
+    private BigDecimal normalPrice;   // 普通价格
     private BigDecimal seckillPrice;
     private Integer stock;
     private LocalDateTime startTime;

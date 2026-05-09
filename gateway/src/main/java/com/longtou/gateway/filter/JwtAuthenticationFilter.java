@@ -19,10 +19,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-/*
-
+/**
    网关统一进行校验jwt
- */
+*/
+
 @Slf4j
 @RequiredArgsConstructor
 @Component

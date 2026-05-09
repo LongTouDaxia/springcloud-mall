@@ -1,10 +1,15 @@
 package com.longtou.commoncore.result;
 
 import com.longtou.commoncore.constant.ErrorCode;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 @Data
+@Builder
+@NoArgsConstructor  // 必须添加：无参构造函数
 public class Result<T> implements Serializable {
     private int code;
     private String msg;

@@ -1,2 +1,11 @@
+com\longtou\payservice\controller\PaymentController.class
+com\longtou\payservice\domain\dto\PaymentCreateDTO.class
+com\longtou\payservice\mq\PaymentMessageSender.class
+com\longtou\payservice\domain\vo\PaymentVO.class
+com\longtou\payservice\service\impl\PaymentServiceImpl.class
+com\longtou\payservice\mq\RabbitMQConfig.class
+com\longtou\payservice\service\PaymentService.class
 com\longtou\payservice\domain\entity\Payment.class
+com\longtou\payservice\mapper\PaymentMapper.class
+com\longtou\payservice\domain\dto\PaymentCallbackDTO.class
 com\longtou\payservice\PayServiceApplication.class

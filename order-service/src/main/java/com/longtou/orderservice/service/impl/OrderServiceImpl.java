@@ -1,10 +1,8 @@
 package com.longtou.orderservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.extension.conditions.update.UpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.longtou.commonapi.client.ProductFeignClient;
-import com.longtou.commonweb.exception.BusinessException;
 import com.longtou.orderservice.domain.dto.OrderCreateDTO;
 import com.longtou.orderservice.domain.dto.OrderQueryDTO;
 import com.longtou.orderservice.domain.entity.Order;
@@ -138,5 +136,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
         log.info("更新订单状态成功，订单号：{}，新状态：{}", orderNo, order.getStatus());
         return true;
+    }
+
+    @Override
+    public Long selectOrderByUserId(Long userId) {
+        Long count = query().eq("user_id", userId).count();
+        return count;
     }
 }

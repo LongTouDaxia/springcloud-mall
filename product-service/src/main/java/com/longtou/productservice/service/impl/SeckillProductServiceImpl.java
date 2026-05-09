@@ -2,9 +2,12 @@ package com.longtou.productservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.longtou.commoncore.mq.SeckillOrderMessage;
+import com.longtou.commoncore.utils.UserContext;
 import com.longtou.commonweb.exception.BusinessException;
 import com.longtou.commoncore.constant.ErrorCode;
 import com.longtou.productservice.domain.dto.SeckillProductDTO;
+import com.longtou.productservice.domain.dto.SeckillStockDTO;
 import com.longtou.productservice.domain.entity.Product;
 import com.longtou.productservice.domain.entity.SeckillProduct;
 import com.longtou.productservice.domain.vo.SeckillProductVO;
@@ -14,22 +17,73 @@ import com.longtou.productservice.service.ProductService;
 import com.longtou.productservice.service.SeckillProductService;
 import lombok.RequiredArgsConstructor;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
-
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class SeckillProductServiceImpl extends ServiceImpl<SeckillProductMapper, SeckillProduct> implements SeckillProductService {
 
     private final ProductService productService;
     private final ProductMapper productMapper;
+    private final SeckillProductMapper seckillProductMapper;
+    private final StringRedisTemplate stringRedisTemplate;
+    private final RabbitTemplate rabbitTemplate;
 
+
+    //信息预热  存入秒杀商品库存
+    private DefaultRedisScript<Long> stockLuaScript;
+    //注解  表示bean生成后即执行这个方法
+    @PostConstruct
+    public void init(){
+
+        LuaInit();
+        log.info("Lua初始化成功");
+
+
+        initSeckillStockToRedis();
+        log.info("秒杀商品预热成功");
+
+    }
+
+    private void initSeckillStockToRedis() {
+        List<SeckillProduct> seckillProducts = seckillProductMapper.selectList(null);
+
+        for(SeckillProduct seckillProduct:seckillProducts){
+            String stockKey = "seckill:stock:" + seckillProduct.getId();
+            stringRedisTemplate.opsForValue().set(stockKey, String.valueOf(seckillProduct.getStock()));
+        }
+
+    }
+    private void LuaInit() {
+
+        stockLuaScript = new DefaultRedisScript<>();
+
+        stockLuaScript.setScriptText(
+                "local stock_key = KEYS[1]\n" +
+                        "local user_key = KEYS[2]\n" +
+                        "local user_id = ARGV[1]\n" +
+                        "local stock = redis.call('get', stock_key)\n" +
+                        "if tonumber(stock) <= 0 then return 0 end\n" +
+                        "local bought = redis.call('sismember', user_key, user_id)\n" +
+                        "if bought == 1 then return 1 end\n" +
+                        "redis.call('decr', stock_key)\n" +
+                        "redis.call('sadd', user_key, user_id)\n" +
+                        "return 2\n"
+        );
+        stockLuaScript.setResultType(Long.class);
+    }
     @Override
     @Transactional
     public SeckillProductVO addSeckillProduct(SeckillProductDTO dto) {
@@ -102,6 +156,81 @@ public class SeckillProductServiceImpl extends ServiceImpl<SeckillProductMapper,
         return seckillList.stream()
                 .map(sp -> convertToVO(sp, productMap.get(sp.getProductId())))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Map<String, String> doSeckill(@Valid SeckillStockDTO seckillStockDTO) {
+        Long userId = UserContext.getCurrentUserId();
+        Long seckillId = seckillStockDTO.getSeckillId();
+        Integer quantity = seckillStockDTO.getQuantity();
+
+        Map<String, String> map = new HashMap<>();
+        // 1. 参数校验
+        if (userId == null || seckillId == null || quantity == null || quantity <= 0) {
+            throw new BusinessException(500,"参数异常");
+        }
+        //资格校验
+        String stockKey = "seckill:stock:" + seckillId;
+        String userKey = "seckill:user:" + seckillId;
+
+        //获取用户状态  0表示库存不足 1表示用户已购买 2表示下单成功
+        //redis之星lua教本
+        Long result = stringRedisTemplate.execute(stockLuaScript,
+                Arrays.asList(stockKey, userKey),
+                userId.toString());
+
+        if (result == 0) {
+            throw new BusinessException(500,"库存不足");
+        }
+        if (result == 1) {
+            log.info("用户买过了");
+            map.put("message","不能重复下单");
+            return map;
+        }
+        //创建订单
+        //校验成功  生成订单唯一id
+        String orderToken = UUID.randomUUID().toString().replaceAll("-", "");
+
+        // 3. 发送消息到 RabbitMQ（异步创建订单）
+        SeckillOrderMessage message = new SeckillOrderMessage(userId, seckillId, quantity,orderToken);
+
+
+        rabbitTemplate.convertAndSend("cloud_seckill.exchange", "seckill.order", message);
+
+
+        map.put("tokenId",orderToken);
+        map.put("wsUrl","/ws/seckill/"+orderToken);//告诉前端完整路径
+        return map;
+
+    }
+
+    @Override
+    public void decreaseStock(Long userId, Long quantity, Long seckillId) {
+        // 1. 查询秒杀商品信息
+        SeckillProduct seckillProduct = query().eq("id", seckillId).one();
+
+        // 2. 校验库存是否充足
+        if (seckillProduct == null || seckillProduct.getStock() < quantity) {
+            throw new BusinessException(500, "库存不足或商品不存在");
+        }
+
+        Integer version = seckillProduct.getVersion();
+        // 3. 扣减库存（乐观锁方式，防止超卖）
+
+        // 乐观锁扣减库存
+        boolean updateResult = lambdaUpdate()
+                .setSql("stock = stock - " + quantity)   // 注意这里拼接 quantity，小心 SQL 注入？但 quantity 是 Long 类型且来自内部，问题不大；更安全可用 set("stock", "stock - " + quantity) 但 MyBatis-Plus 的 set 不支持表达式，所以用 setSql
+                .eq(SeckillProduct::getId, seckillId)
+                .eq(SeckillProduct::getVersion, version)  // 乐观锁条件
+                .update();  // 返回 boolean，实际上影响行数>0 则 true
+
+        if (!updateResult) {
+            // 更新失败说明库存被其他线程抢先扣减导致版本号/库存条件不满足
+            throw new BusinessException(500, "扣减库存失败，请重试");
+        }
+
+        // 4. 可选：记录用户秒杀明细、日志等
+        log.info("用户 {} 秒杀商品 {}，扣减库存 {}", userId, seckillId, quantity);
     }
 
  /*   @Override

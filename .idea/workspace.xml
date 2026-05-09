@@ -4,31 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="142cdcc6-249c-463f-8b7c-9a983b5ac8cc" name="Changes" comment="orderservice模块开发">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/OrderFeignClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/mq/PaymentOrderMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/longtou_cloud.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/mq/OrderPaymentListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/mq/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/domain/dto/PaymentCallbackDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/domain/dto/PaymentCreateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/domain/vo/PaymentVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/mapper/PaymentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/mq/PaymentMessageSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/mq/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/service/impl/PaymentServiceImpl.java" afterDir="false" />
+    <list default="true" id="142cdcc6-249c-463f-8b7c-9a983b5ac8cc" name="Changes" comment="payservice模块开发 消息队列实现事务一致性">
+      <change afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/SeckillProductFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/domain/vo/SeckillProductVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/mq/SeckillOrderMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/config/GatewayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/filter/TestAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/mq/SeckillOrderListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/OrderFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/OrderFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/ProductFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/src/main/java/com/longtou/commonapi/client/ProductFeignClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/OrderServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-core/src/main/java/com/longtou/commoncore/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/config/interceptor/UserInfoInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/config/interceptor/UserInfoInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-web/src/main/java/com/longtou/commonweb/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/longtou/gateway/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/mq/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/mq/RabbitMQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/longtou/orderservice/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/target/classes/com/longtou/orderservice/OrderServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/target/classes/com/longtou/orderservice/OrderServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/PayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/src/main/java/com/longtou/payservice/PayServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pay-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay-service/target/classes/com/longtou/payservice/PayServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/target/classes/com/longtou/payservice/PayServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/pay-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/ProductServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/controller/SeckillProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/controller/SeckillProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/domain/entity/SeckillProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/domain/entity/SeckillProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/SeckillProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/SeckillProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/impl/SeckillProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/longtou/productservice/service/impl/SeckillProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/target/classes/com/longtou/productservice/ProductServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/target/classes/com/longtou/productservice/ProductServiceApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +51,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,11 +112,11 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/build_related/Java_houduan/java_project/longtou_cloud/cart-service/src/main/resources",
+    "last_opened_file_path": "D:/build_related/Java_houduan/java_project/longtou_cloud/order-service/src/main/resources",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
@@ -116,13 +129,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\resources" />
       <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\cart-service\src\main\resources" />
       <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\gateway\src\main\resources" />
-      <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\resources" />
       <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\pay-service\src\main\resources" />
       <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\product-service\src\main\java\com\longtou\productservice" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud\gateway\src\main\java\com\longtou\gateway" />
       <recent name="D:\build_related\Java_houduan\java_project\longtou_cloud" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -131,6 +145,8 @@
       <recent name="com.longtou.mallapi.client" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.longtou.commonapi.domain.vo" />
+      <recent name="com.longtou.commoncore.mq" />
       <recent name="com.longtou.commondb.dbconfig" />
       <recent name="com.longtou.mallapi.domain.vo" />
       <recent name="com.longtou.mallapi.dto" />
@@ -153,6 +169,7 @@
               <entry key="CartServiceApplication" value="STOPPED" />
               <entry key="GatewayApplication" value="STOPPED" />
               <entry key="OrderServiceApplication" value="STOPPED" />
+              <entry key="PayServiceApplication" value="STOPPED" />
               <entry key="ProductServiceApplication" value="STOPPED" />
               <entry key="UserServiceApplication" value="STOPPED" />
             </map>
@@ -222,7 +239,7 @@
       <updated>1778046064769</updated>
       <workItem from="1778046066292" duration="34034000" />
       <workItem from="1778130891779" duration="7043000" />
-      <workItem from="1778141605402" duration="7628000" />
+      <workItem from="1778141605402" duration="32802000" />
     </task>
     <task id="LOCAL-00001" summary="userservice模块开发">
       <option name="closed" value="true" />
@@ -272,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778142440023</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="payservice模块开发 消息队列实现事务一致性">
+      <option name="closed" value="true" />
+      <created>1778149464153</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778149464153</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +310,7 @@
     <MESSAGE value="gateway模块初步开发" />
     <MESSAGE value="common模块拆分 网关完善" />
     <MESSAGE value="orderservice模块开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="orderservice模块开发" />
+    <MESSAGE value="payservice模块开发 消息队列实现事务一致性" />
+    <option name="LAST_COMMIT_MESSAGE" value="payservice模块开发 消息队列实现事务一致性" />
   </component>
 </project>

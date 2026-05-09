@@ -1,10 +1,13 @@
-D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\domain\vo\OrderCreatedVO.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\domain\vo\OrderVO.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\controller\OrderController.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\OrderServiceApplication.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\domain\dto\OrderCreateDTO.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\service\impl\OrderServiceImpl.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\domain\entity\Order.java
-D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\mapper\OrderMapper.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\mq\SeckillOrderListener.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\domain\dto\OrderQueryDTO.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\service\OrderService.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\domain\vo\OrderCreatedVO.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\mq\OrderPaymentListener.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\mq\RabbitMQConfig.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\order-service\src\main\java\com\longtou\orderservice\mapper\OrderMapper.java

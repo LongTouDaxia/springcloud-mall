@@ -11,6 +11,22 @@ spring:
         namespace: dev
         file-extension: yaml
         refresh-enabled: true
+    sentinel:
+      transport:
+        dashboard: localhost:8858  # Sentinel控制台地址
+        port: 8719
+      eager: true
+      datasource:
+        flow: # 只配置这一个就够了！
+          nacos:
+            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+            dataId: sentinel-flow-rules.json
+            groupId: DEFAULT_GROUP
+            namespace: ${spring.cloud.nacos.discovery.namespace}
+            rule-type: flow
+            data-type: json
+
+
   config:
     import: optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:

@@ -1,10 +1,13 @@
 com\longtou\orderservice\controller\OrderController.class
-com\longtou\orderservice\domain\vo\OrderVO.class
 com\longtou\orderservice\domain\vo\OrderCreatedVO.class
+com\longtou\orderservice\domain\dto\OrderQueryDTO.class
+com\longtou\orderservice\service\OrderService.class
+com\longtou\orderservice\domain\vo\OrderVO.class
 com\longtou\orderservice\mapper\OrderMapper.class
 com\longtou\orderservice\OrderServiceApplication.class
-com\longtou\orderservice\domain\dto\OrderQueryDTO.class
 com\longtou\orderservice\service\impl\OrderServiceImpl.class
 com\longtou\orderservice\domain\dto\OrderCreateDTO.class
-com\longtou\orderservice\service\OrderService.class
+com\longtou\orderservice\mq\RabbitMQConfig.class
+com\longtou\orderservice\mq\SeckillOrderListener.class
+com\longtou\orderservice\mq\OrderPaymentListener.class
 com\longtou\orderservice\domain\entity\Order.class

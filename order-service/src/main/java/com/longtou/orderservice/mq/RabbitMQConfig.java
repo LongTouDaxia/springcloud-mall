@@ -28,4 +28,23 @@ public class RabbitMQConfig {
                 .to(paymentExchange())
                 .with("order.status.update");
     }
+    // 秒杀下单交换机
+    @Bean
+    public DirectExchange orderExchange() {
+        return new DirectExchange("cloud_seckill.exchange", true, false);
+    }
+
+    // 秒杀下单队列
+    @Bean
+    public Queue seckillQueue() {
+        return new Queue("seckill.order.queue", true);
+    }
+
+    // 绑定
+    @Bean
+    public Binding orderBinding() {
+        return BindingBuilder.bind(seckillQueue()).to(orderExchange()).with("seckill.order");
+    }
+
+
 }

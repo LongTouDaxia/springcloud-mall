@@ -51,4 +51,15 @@ public class OrderController {
         List<OrderVO> list = orderService.listOrders(userId, queryDTO);
         return Result.success(list);
     }
+
+
+    @GetMapping("/user")
+    public Long selectOrderByUserId(@RequestParam Long userId){
+
+        Long count = orderService.selectOrderByUserId(userId);
+        return count;
+
+
+
+    }
 }

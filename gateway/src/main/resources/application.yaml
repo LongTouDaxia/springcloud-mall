@@ -11,6 +11,7 @@ spring:
         namespace: dev
         file-extension: yaml
         refresh-enabled: true
+
   config:
     import: optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 

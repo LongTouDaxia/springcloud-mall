@@ -16,4 +16,6 @@ public interface OrderService extends IService<Order> {
     List<OrderVO> listOrders(Long userId, OrderQueryDTO queryDTO);
 
     boolean updateOrderPayStatus(Long orderNo, Integer status);
+
+    Long selectOrderByUserId(Long userId);
 }
