@@ -8,8 +8,7 @@ import com.longtou.payservice.domain.dto.PaymentCallbackDTO;
 import com.longtou.payservice.domain.entity.Payment;
 import com.longtou.payservice.domain.vo.PaymentVO;
 import com.longtou.payservice.mapper.PaymentMapper;
-import com.longtou.payservice.mq.PaymentMessageSender;
-import com.longtou.commoncore.mq.PaymentOrderMessage;
+
 import com.longtou.payservice.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +26,6 @@ import java.util.stream.Collectors;
 public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment> implements PaymentService {
     
     private final PaymentMapper paymentMapper;
-    private final PaymentMessageSender paymentMessageSender;
 
     private final OrderFeignClient orderFeignClient;
     @Override
@@ -72,7 +70,7 @@ public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment> impl
         payment.setUpdateTime(LocalDateTime.now());
 
         updateById(payment);
-        
+       /*
         //消息队列发送消息
         PaymentOrderMessage message = new PaymentOrderMessage();
         message.setPaymentId(payment.getId());
@@ -83,7 +81,7 @@ public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment> impl
         message.setChannel(payment.getChannel());
         //发送消息
         paymentMessageSender.sendPaymentStatusUpdate(message);
-
+*/
         
         return convertToVO(payment);
     }

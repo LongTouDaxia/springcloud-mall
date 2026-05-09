@@ -3,5 +3,6 @@ D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\jav
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\domain\dto\ProductDTO.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\client\OrderFeignClient.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\client\SeckillProductFeignClient.java
+D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\domain\dto\SeckillOrderMessage.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\domain\vo\ProductVO.java
 D:\build_related\Java_houduan\java_project\longtou_cloud\common-api\src\main\java\com\longtou\commonapi\domain\vo\SeckillProductVO.java

@@ -2,7 +2,7 @@ package com.longtou.productservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.longtou.commoncore.mq.SeckillOrderMessage;
+import com.longtou.commonapi.domain.dto.SeckillOrderMessage;
 import com.longtou.commoncore.utils.UserContext;
 import com.longtou.commonweb.exception.BusinessException;
 import com.longtou.commoncore.constant.ErrorCode;
@@ -16,9 +16,13 @@ import com.longtou.productservice.mapper.SeckillProductMapper;
 import com.longtou.productservice.service.ProductService;
 import com.longtou.productservice.service.SeckillProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.messaging.support.MessageBuilder;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
+
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
@@ -39,7 +43,7 @@ public class SeckillProductServiceImpl extends ServiceImpl<SeckillProductMapper,
     private final ProductMapper productMapper;
     private final SeckillProductMapper seckillProductMapper;
     private final StringRedisTemplate stringRedisTemplate;
-    private final RabbitTemplate rabbitTemplate;
+    private final RocketMQTemplate rocketMQTemplate;
 
 
     //信息预热  存入秒杀商品库存
@@ -192,10 +196,17 @@ public class SeckillProductServiceImpl extends ServiceImpl<SeckillProductMapper,
         String orderToken = UUID.randomUUID().toString().replaceAll("-", "");
 
         // 3. 发送消息到 RabbitMQ（异步创建订单）
-        SeckillOrderMessage message = new SeckillOrderMessage(userId, seckillId, quantity,orderToken);
+       // SeckillOrderMessage message = new SeckillOrderMessage(userId, seckillId, quantity,orderToken);
 
+       //改用rocketmq发送消息并实现事务一致性
+        // rabbitTemplate.convertAndSend("cloud_seckill.exchange", "seckill.order", message);
 
-        rabbitTemplate.convertAndSend("cloud_seckill.exchange", "seckill.order", message);
+        SeckillOrderMessage message = new SeckillOrderMessage(userId, seckillId, quantity, orderToken);
+
+        rocketMQTemplate.sendMessageInTransaction("seckill-topic",
+                MessageBuilder.withPayload(message).build(),
+                message);
+        log.info("已发送 RocketMQ 事务消息至 seckill_topic: {}", orderToken);
 
 
         map.put("tokenId",orderToken);
