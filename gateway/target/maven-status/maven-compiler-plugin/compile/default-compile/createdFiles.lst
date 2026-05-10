@@ -3,4 +3,5 @@ com\longtou\gateway\route\NacosRouteDefinitionRepository$2.class
 com\longtou\gateway\route\NacosRouteDefinitionRepository$1.class
 com\longtou\gateway\route\NacosRouteDefinitionRepository.class
 com\longtou\gateway\filter\JwtAuthenticationFilter.class
+com\longtou\gateway\config\GatewayConfig.class
 com\longtou\gateway\GatewayApplication.class

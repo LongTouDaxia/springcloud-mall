@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- 引入Spring Boot预设的一些默认配置，如日志颜色等，保持一致性 -->
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-    <!-- 定义全局变量：日志输出格式，这里是我们关注的重点 -->
-    <property name="LOG_PATTERN"
-              value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <!-- 注册 SkyWalking 的 tid 转换器 -->
+    <conversionRule conversionWord="tid"
+                    converterClass="org.apache.skywalking.apm.toolkit.log.logback.v1.x.LogbackPatternConverter"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${LOG_PATTERN}</pattern>
-            <charset>utf8</charset>
+            <!-- 注意这里改为 %tid 而不是 %X{tid} -->
+            <pattern>%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr([%tid]){magenta} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</pattern>
         </encoder>
     </appender>
 
-    <!-- 设置Root Logger级别 -->
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="CONSOLE"/>
     </root>
 </configuration>

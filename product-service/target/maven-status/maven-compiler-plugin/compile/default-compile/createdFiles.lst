@@ -1,3 +1,4 @@
+com\longtou\productservice\service\mq\TransactionListenerImpl.class
 com\longtou\productservice\domain\dto\SeckillProductDTO.class
 com\longtou\productservice\mapper\SeckillProductMapper.class
 com\longtou\productservice\service\ProductService.class
