@@ -72,7 +72,7 @@ public class SeckillProductController {
      * 测试网管限流
      * @return
      */
-    @SentinelResource(value = "seckillTest")
+    @SentinelResource(value = "seckillTest",blockHandler = "",fallback = "")
     @GetMapping("/test")
     public String test() {
         return "秒杀测试接口 - 时间：" + new Date();

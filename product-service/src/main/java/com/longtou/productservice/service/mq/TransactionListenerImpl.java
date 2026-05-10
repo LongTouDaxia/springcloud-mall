@@ -7,8 +7,8 @@ import com.longtou.productservice.mapper.SeckillProductMapper;
 import com.longtou.productservice.service.SeckillProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.transaction.Transaction;
-import org.apache.rocketmq.client.producer.TransactionMQProducer;
+
+
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalTransactionState;
